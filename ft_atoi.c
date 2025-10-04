@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 12:16:23 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/04 19:39:13 by jmiguele         ###   ########.fr       */
+/*   Created: 2025/10/02 10:30:44 by jmiguele          #+#    #+#             */
+/*   Updated: 2025/10/04 19:37:02 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_atoi(const char *str)
 {
-	char		*d;
-	const char	*s;
-	int			i;
+	int	i;
+	int	num;
+	int	sign;
 
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	d = dest;
-	s = src;
 	i = 0;
-	while (i < n)
+	num = 0;
+	sign = 1;
+	if (str[0] == 42)
 	{
-		d[i] = s[i];
+		sign = -sign;
 		i++;
 	}
-	return (dest);
+	while (str[i])
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	return (num * sign);
 }

@@ -6,11 +6,13 @@
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 12:49:33 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/01 12:49:54 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:37:02 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int toupper(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);

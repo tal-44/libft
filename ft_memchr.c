@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 12:16:23 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/04 19:39:13 by jmiguele         ###   ########.fr       */
+/*   Created: 2025/10/02 09:45:23 by jmiguele          #+#    #+#             */
+/*   Updated: 2025/10/04 18:23:19 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *buffer, int c, size_t count)
 {
-	char		*d;
-	const char	*s;
+	const char	*ptr;
 	int			i;
 
-	if (dest == NULL && src == NULL)
+	if (buffer == NULL)
 		return (NULL);
-	d = dest;
-	s = src;
-	i = 0;
-	while (i < n)
+	ptr = (const char *)buffer;
+	while (i < count)
 	{
-		d[i] = s[i];
+		if (ptr[i] == (char)c)
+			return ((void *)(ptr + i));
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

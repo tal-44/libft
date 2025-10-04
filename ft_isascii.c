@@ -6,11 +6,13 @@
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:54:28 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/09/30 12:10:16 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:36:52 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(const int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

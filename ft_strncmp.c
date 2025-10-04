@@ -6,18 +6,18 @@
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:04:11 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/01 13:07:04 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:37:02 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s2[i])
+	while (s1[i] && s2[i] && i < n)
 	{
 		if (s1[i] != s2[i])
 		{

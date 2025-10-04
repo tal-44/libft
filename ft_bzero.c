@@ -6,23 +6,23 @@
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 12:08:22 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/01 12:16:08 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/04 19:37:02 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char    *c;
-    int     i;
+	char	*c;
+	int		i;
 
-    c = s;
-    i = 0;
-    while (i < n)
-    {
-        *c = '\0';
-        c++;
-        i++;
-    }    
+	c = s;
+	i = 0;
+	while (i < n)
+	{
+		*c = '\0';
+		c++;
+		i++;
+	}
 }

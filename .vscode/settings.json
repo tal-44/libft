@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "string.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "stdlib.h": "c"
     },
     "makefile.configureOnOpen": false
 }
