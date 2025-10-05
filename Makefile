@@ -51,7 +51,9 @@ SRCS =  ft_isalpha.c \
         ft_putchar_fd.c \
         ft_putendl_fd.c \
         ft_putnbr_fd.c \
-        ft_putstr_fd.c \
+        ft_putstr_fd.c
+
+SRCS_BONUS = ft_lstnew.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -70,7 +72,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@echo "Cleaning up..."
-	@$(RM) $(OBJS) $(BOBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
 	@echo "Eliminando libreria..."

@@ -12,17 +12,18 @@
 
 #include "libft.h"
 
-void	*ft_memchr(const void *buffer, int c, size_t count)
+void *ft_memchr(const void *buffer, int c, size_t count)
 {
-	const char	*ptr;
-	int			i;
+	const char *ptr;
+	size_t i;
 
 	if (buffer == NULL)
 		return (NULL);
 	ptr = (const char *)buffer;
+	i = 0;
 	while (i < count)
 	{
-		if (ptr[i] == (char)c)
+		if (ptr[i] == (unsigned char)c)
 			return ((void *)(ptr + i));
 		i++;
 	}

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_isdigit(const int n)
+int ft_isdigit(const int n)
 {
-	if (n >= 48 && n >= 57)
+	if (n >= '0' && n <= '9')
 		return (1);
 	return (0);
 }

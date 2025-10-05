@@ -12,84 +12,75 @@
 
 #include "libft.h"
 
-int	*get_lens(char const *s, char c)
+size_t count_words(const char *s, char c)
 {
-	int	*lens;
-	int	i;
-	int	j;
-	int	k;
+	size_t i = 0;
+	size_t words = 0;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i] == c)
-		i++;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
 		{
-			while (s[i] == c)
+			words++;
+			while (s[i] && s[i] != c)
 				i++;
-			lens[j] = k;
-			j++;
-			k = 0;
 		}
-		k++;
-		i++;
 	}
-	lens[i] = 1;
-	return (lens);
+	return (words);
 }
 
-char	**create_strs(s, c)
+size_t word_len(const char *s, char c)
 {
-	char	**strs;
-	int		*lens;
-	int		i;
+	size_t len = 0;
 
-	lens = get_lens(s, c);
-	strs = malloc((ft_strlen(lens)) * sizeof(char *));
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
+}
+
+char **free_split(char **arr, size_t filled)
+{
+	size_t i;
+
+	i = 0;
+	while (i < filled)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **strs;
+	size_t words;
+	size_t i = 0;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	strs = malloc((words + 1) * sizeof(char *));
 	if (!strs)
 		return (NULL);
-	i = 0;
-	while (strs[i])
+	while (i < words)
 	{
-		strs[i] = malloc(lens[i] * sizeof(char));
+		while (*s && *s == c)
+			s++;
+		strs[i] = malloc(word_len(s, c) + 1);
 		if (!strs[i])
-			return (NULL);
+		{
+			return (free_split(strs, i));
+		}
+		ft_strlcpy(strs[i], (char *)s, word_len(s, c) + 1);
+		s += word_len(s, c);
 		i++;
 	}
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**strs;
-	int		i;
-	int		j;
-	int		k;
-
-	strs = create_strs(s, c);
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			while (s[i] == c)
-				i++;
-			j++;
-			k = 0;
-		}
-		else
-		{
-			strs[j][k] = s[i];
-			i++;
-			k++;
-		}
-	}
-	strs[j][0] = "\0";
+	strs[words] = NULL;
 	return (strs);
 }

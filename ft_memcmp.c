@@ -12,24 +12,20 @@
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*c1;
-	const char	*c2;
-	int			i;
+	const unsigned char *c1;
+	const unsigned char *c2;
+	size_t i;
 
-	c1 = (const char *)s1;
-	c2 = (const char *)s2;
+	c1 = (const unsigned char *)s1;
+	c2 = (const unsigned char *)s2;
 	i = 0;
-	while (c1[i] && c2[i] && i < n)
+	while (i < n)
 	{
 		if (c1[i] != c2[i])
-		{
-			return (c1[i] - c2[i]);
-		}
+			return ((int)(c1[i] - c2[i]));
 		i++;
 	}
-	if (n == i)
-		return (0);
-	return (c1[i] - c2[i]);
+	return (0);
 }

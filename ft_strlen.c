@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -22,9 +22,19 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-int	ft_strlen_intarray(const int *str)
+size_t	ft_strnlen(const char *str, size_t maxlen)
 {
-	int	i;
+	size_t	i;
+
+	i = 0;
+	while (str[i] && i < maxlen)
+		i++;
+	return (i);
+}
+
+size_t	ft_strlen_intarray(const int *str)
+{
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -32,21 +42,34 @@ int	ft_strlen_intarray(const int *str)
 	return (i);
 }
 
-int	ft_strlen_arraybi(const char **str)
+size_t	ft_strlen_arraybi(const char **str)
 {
-	int	i;
+	size_t	i;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (str[i][0])
+	while (str[i])
 		i++;
 	return (i);
 }
 
-int	ft_strlen_num(int count, int n)
+size_t	ft_strlen_num(int n)
 {
-	if (n < 0)
-		return (ft_strlen_num(count++, n *= -1));
-	if (n > 9)
-		return (ft_strlen_num(count++, n /= 10));
-	return (count++);
+	size_t	len;
+	long	num;
+
+	num = n;
+	len = 0;
+	if (num <= 0)
+	{
+		len = 1;
+		num = -num;
+	}
+	while (num > 0)
+	{
+		len++;
+		num /= 10;
+	}
+	return (len);
 }
