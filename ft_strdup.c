@@ -6,19 +6,17 @@
 /*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:12:00 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/04 19:37:02 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/06 11:19:17 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *src)
+char	*ft_strdup(const char *src)
 {
-	size_t i;
-	char *dest;
+	size_t	i;
+	char	*dest;
 
-	if (!src)
-		return (NULL);
 	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);

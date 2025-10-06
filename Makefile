@@ -6,7 +6,7 @@
 #    By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 10:06:26 by jmiguele          #+#    #+#              #
-#    Updated: 2025/10/04 19:33:39 by jmiguele         ###   ########.fr        #
+#    Updated: 2025/10/06 09:57:00 by jmiguele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,6 @@ SRCS =  ft_isalpha.c \
         ft_putnbr_fd.c \
         ft_putstr_fd.c
 
-SRCS_BONUS = ft_lstnew.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -81,4 +80,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
