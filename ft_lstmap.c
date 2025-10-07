@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 11:43:54 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:34:40 by jmiguele         ###   ########.fr       */
+/*   Created: 2025/10/07 11:21:11 by jmiguele          #+#    #+#             */
+/*   Updated: 2025/10/07 12:44:55 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(const int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	t_list	*list;
+
+	while (lst)
+	{
+		list = ft_lstnew(NULL);
+		if (!(list))
+			return (NULL);
+		list->content = f(lst->content);
+		list->next = lst->next;
+		lst = lst->next;
+	}
 }

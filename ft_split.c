@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:45:51 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/06 13:33:03 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/07 12:24:10 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ size_t	word_len(const char *s, char c)
 	return (len);
 }
 
-char	**free_split(char **arr, size_t filled)
+char	**free_split(char **arr, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < filled)
+	while (i < len)
 	{
 		free(arr[i]);
 		i++;

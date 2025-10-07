@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmiguele <jmiguele@student.42.fr>          +#+  +:+       +#+         #
+#    By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 10:06:26 by jmiguele          #+#    #+#              #
-#    Updated: 2025/10/06 09:57:00 by jmiguele         ###   ########.fr        #
+#    Updated: 2025/10/07 12:43:50 by jmiguele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,19 +51,31 @@ SRCS =  ft_isalpha.c \
         ft_putchar_fd.c \
         ft_putendl_fd.c \
         ft_putnbr_fd.c \
-        ft_putstr_fd.c
+        ft_putstr_fd.c \
 
+BSRCS = ft_lstnew.c \
+        ft_lstadd_front.c \
+        ft_lstsize.c \
+        ft_lstlast.c \
+        ft_lstadd_back.c \
+        ft_lstdelone.c \
+        ft_lstclear.c \
+        ft_lstiter.c \
+        ft_lstmap.c \
 
 OBJS = $(SRCS:.c=.o)
+BOBJS = $(BSRCS:.c=.o)
 
-
-
-all: $(NAME)
+all: $(NAME) bonus
 
 $(NAME): $(OBJS)
 	@echo "Compilando librería..."
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	@echo "Libreria creada: $(NAME)"
+
+bonus: $(NAME) $(BOBJS)
+	@echo "Compilando bonus..."
+	@$(AR) $(ARFLAGS) $(NAME) $(BOBJS)
 
 %.o: %.c
 	@echo "Compilando"
@@ -71,7 +83,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@echo "Cleaning up..."
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BOBJS)
 
 fclean: clean
 	@echo "Eliminando libreria..."
@@ -80,4 +92,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
