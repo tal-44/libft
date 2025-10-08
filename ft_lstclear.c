@@ -6,7 +6,7 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:45:27 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 12:19:40 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/08 12:42:34 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list  *node;
-	t_list  *next;
+	t_list	*node;
+	t_list	*next;
 
 	if (!lst || !del)
 		return ;
