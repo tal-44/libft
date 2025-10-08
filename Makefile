@@ -66,7 +66,7 @@ BSRCS = ft_lstnew.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
-all: $(NAME) bonus
+all: bonus
 
 $(NAME): $(OBJS)
 	@echo "Compilando librería..."
@@ -76,6 +76,7 @@ $(NAME): $(OBJS)
 bonus: $(NAME) $(BOBJS)
 	@echo "Compilando bonus..."
 	@$(AR) $(ARFLAGS) $(NAME) $(BOBJS)
+        @echo "Bonus añadidos a la libreria: $(NAME)"
 
 %.o: %.c
 	@echo "Compilando"
