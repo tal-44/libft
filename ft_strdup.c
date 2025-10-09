@@ -6,7 +6,7 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:12:00 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:34:06 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/09 10:42:24 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strdup(const char *src)
 {
-	size_t	i;
-	char	*dest;
+	size_t			i;
+	unsigned char	*dest;
 
-	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
+	dest = (unsigned char *)malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
 	i = 0;
@@ -27,5 +27,5 @@ char	*ft_strdup(const char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return ((char *)(dest));
 }
