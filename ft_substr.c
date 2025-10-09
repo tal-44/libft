@@ -6,13 +6,13 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:47:16 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:33:24 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/09 11:54:42 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*aux(char *str)
+static char	*aux(char *str)
 {
 	if (!str)
 		return (NULL);

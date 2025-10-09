@@ -6,7 +6,7 @@
 #    By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 10:06:26 by jmiguele          #+#    #+#              #
-#    Updated: 2025/10/09 10:50:03 by jmiguele         ###   ########.fr        #
+#    Updated: 2025/10/09 11:17:45 by jmiguele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,15 +53,15 @@ SRCS =  ft_isalpha.c \
         ft_putnbr_fd.c \
         ft_putstr_fd.c \
 
-BSRCS = ft_lstnew.c \
-        ft_lstadd_front.c \
-        ft_lstsize.c \
-        ft_lstlast.c \
-        ft_lstadd_back.c \
-        ft_lstdelone.c \
-        ft_lstclear.c \
-        ft_lstiter.c \
-        ft_lstmap.c \
+BSRCS = ft_lstnew_bonus.c \
+        ft_lstadd_front_bonus.c \
+        ft_lstsize_bonus.c \
+        ft_lstlast_bonus.c \
+        ft_lstadd_back_bonus.c \
+        ft_lstdelone_bonus.c \
+        ft_lstclear_bonus.c \
+        ft_lstiter_bonus.c \
+        ft_lstmap_bonus.c \
 
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
