@@ -6,7 +6,7 @@
 #    By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 10:06:26 by jmiguele          #+#    #+#              #
-#    Updated: 2025/10/08 12:56:57 by jmiguele         ###   ########.fr        #
+#    Updated: 2025/10/09 10:50:03 by jmiguele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,6 @@ $(NAME): $(OBJS)
 bonus: $(NAME) $(BOBJS)
 	@echo "Compilando bonus..."
 	@$(AR) $(ARFLAGS) $(NAME) $(BOBJS)
-        @echo "Bonus añadidos a la libreria: $(NAME)"
 
 %.o: %.c
 	@echo "Compilando"
