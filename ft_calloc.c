@@ -6,7 +6,7 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 11:09:24 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/09 11:54:39 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/10 09:37:47 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*str;
 	size_t	bytes;
 	size_t	max_value;
+
 	if (count == 0 || size == 0)
 	{
-		return ((void *)malloc(1));
+		return ((void *)malloc(0));
 	}
 	max_value = (size_t)-1;
 	if (count != 0 && size > max_value / count)

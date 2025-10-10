@@ -6,11 +6,31 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:25:22 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:34:29 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/10 10:12:16 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_strlen_num(int n)
+{
+	size_t	len;
+	long	num;
+
+	num = n;
+	len = 0;
+	if (num <= 0)
+	{
+		len = 1;
+		num = -num;
+	}
+	while (num > 0)
+	{
+		len++;
+		num /= 10;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {

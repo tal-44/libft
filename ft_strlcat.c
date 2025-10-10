@@ -6,11 +6,21 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 09:54:58 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:34:00 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/10 10:12:24 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_strnlen(const char *str, size_t maxlen)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] && i < maxlen)
+		i++;
+	return (i);
+}
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

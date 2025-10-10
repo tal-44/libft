@@ -6,7 +6,7 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:09:40 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 12:43:53 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/10 10:13:29 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-
-size_t				ft_strnlen(const char *str, size_t maxlen);
-size_t				ft_strlen_arraybi(const char **str);
-size_t				ft_strlen_intarray(const int *str);
-size_t				ft_strlen_num(int n);
 
 #endif
