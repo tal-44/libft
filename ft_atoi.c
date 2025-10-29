@@ -6,7 +6,7 @@
 /*   By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:30:44 by jmiguele          #+#    #+#             */
-/*   Updated: 2025/10/07 11:34:46 by jmiguele         ###   ########.fr       */
+/*   Updated: 2025/10/22 11:10:53 by jmiguele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,13 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(num * sign));
 }
+/*
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[] = "     +-1234ab5678";
+	int result = ft_atoi(str);
+	printf("%d", result);
+}*/

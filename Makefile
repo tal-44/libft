@@ -6,7 +6,7 @@
 #    By: jmiguele <jmiguele@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 10:06:26 by jmiguele          #+#    #+#              #
-#    Updated: 2025/10/09 11:17:45 by jmiguele         ###   ########.fr        #
+#    Updated: 2025/10/23 11:57:16 by jmiguele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,19 +66,22 @@ BSRCS = ft_lstnew_bonus.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
-all: bonus
+all: $(NAME)
+
+bonus: bonuses
 
 $(NAME): $(OBJS)
 	@echo "Compilando librería..."
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	@echo "Libreria creada: $(NAME)"
 
-bonus: $(NAME) $(BOBJS)
+bonuses: $(BOBJS)
 	@echo "Compilando bonus..."
 	@$(AR) $(ARFLAGS) $(NAME) $(BOBJS)
+	@echo "Bonus añadido a: $(NAME)"
+	touch bonuses
 
 %.o: %.c
-	@echo "Compilando"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
