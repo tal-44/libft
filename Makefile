@@ -52,6 +52,8 @@ SRCS =  ft_isalpha.c \
         ft_putendl_fd.c \
         ft_putnbr_fd.c \
         ft_putstr_fd.c \
+        ft_printf/ft_printf.c \
+        ft_printf/ft_printf_utils.c \
 
 BSRCS = ft_lstnew_bonus.c \
         ft_lstadd_front_bonus.c \
