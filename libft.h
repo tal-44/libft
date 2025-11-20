@@ -72,8 +72,5 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 /* ft_printf functions */
 int					ft_printf(const char *input, ...);
-void				print_hex(const char type, va_list args, int *printed_chars);
-void				puthex_fd(unsigned long num, const char format,
-						int *printed_chars);
 
 #endif
