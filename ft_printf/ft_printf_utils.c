@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 
 // 0 for lowercase, 1 for uppercase
-static void	puthex_fd(unsigned long num, const char format, int *printed_chars)
+void	puthex_fd(unsigned long num, const char format, int *printed_chars)
 {
 	char	*cadena_hex;
 
@@ -27,7 +27,7 @@ static void	puthex_fd(unsigned long num, const char format, int *printed_chars)
 	(*printed_chars)++;
 }
 
-static void	putstr_fd(char *s, int fd, int *printed_chars)
+void	putstr_fd(char *s, int fd, int *printed_chars)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ static void	putstr_fd(char *s, int fd, int *printed_chars)
 	}
 }
 
-static void	putnbr_fd(int n, int fd, int *printed_chars)
+void	putnbr_fd(int n, int fd, int *printed_chars)
 {
 	long	num;
 
@@ -62,7 +62,7 @@ static void	putnbr_fd(int n, int fd, int *printed_chars)
 	(*printed_chars)++;
 }
 
-static void	putunsnbr_fd(unsigned int num, int fd, int *printed_chars)
+void	putunsnbr_fd(unsigned int num, int fd, int *printed_chars)
 {
 	if (num >= 10)
 		putunsnbr_fd(num / 10, fd, printed_chars);
