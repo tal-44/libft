@@ -12,6 +12,12 @@
 
 #include "ft_printf.h"
 
+static void	puthex_fd(unsigned long num, const char format, int *printed_chars);
+static void	putstr_fd(char *s, int fd, int *printed_chars);
+static void	putnbr_fd(int n, int fd, int *printed_chars);
+static void	putunsnbr_fd(unsigned int num, int fd, int *printed_chars);
+static void	print_hex(const char type, va_list args, int *printed_chars);
+
 static void	print(const char type, va_list args, int *printed_chars)
 {
 	if (type == 'c')
@@ -29,7 +35,7 @@ static void	print(const char type, va_list args, int *printed_chars)
 		print_hex(type, args, printed_chars);
 }
 
-void	print_hex(const char type, va_list args, int *printed_chars)
+static void	print_hex(const char type, va_list args, int *printed_chars)
 {
 	unsigned long	ptr_value;
 
