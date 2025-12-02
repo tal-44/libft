@@ -30,8 +30,8 @@ Libft es una biblioteca que implementa versiones personalizadas de funciones est
 - Soporta conversiones: `%c`, `%s`, `%p`, `%d`, `%i`, `%u`, `%x`, `%X`, `%%`
 - Ubicación: `ft_printf/`
 
-### Submódulos
-- **gnl** (get_next_line): Función para leer línea por línea de un file descriptor
+### get_next_line
+- **gnl**: Función para leer línea por línea de un file descriptor (incluida localmente)
 
 ## Compilación
 
@@ -72,18 +72,15 @@ make re
 gcc tu_programa.c -L. -lft -o programa
 ```
 
-## Submódulos
+## Clonar el Proyecto
 
-Este proyecto contiene **gnl** como submódulo. Para clonar con todos los submódulos:
+Para clonar el proyecto:
 
 ```bash
-git clone --recurse-submodules https://github.com/tal-44/libft.git
+git clone https://github.com/tal-44/libft.git
 ```
 
-Si ya clonaste el repositorio:
-```bash
-git submodule update --init --recursive
-```
+Todas las dependencias están incluidas localmente, no requiere inicialización de submódulos.
 
 ## Estructura
 
@@ -96,7 +93,7 @@ libft/
 │   ├── ft_printf.c
 │   ├── ft_printf.h
 │   └── ft_printf_utils.c
-└── gnl/             # Submódulo get_next_line
+└── gnl/             # get_next_line integrado localmente
 ```
 
 ## Autor
